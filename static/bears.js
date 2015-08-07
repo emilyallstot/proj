@@ -11,8 +11,8 @@ function initialize() {
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
     var mapOptions = {
-        zoom: 5,
-        center: new google.maps.LatLng(70, -148),
+        zoom: 8,
+        center: new google.maps.LatLng(37, -122),
         zoomControl: true,
         panControl: false,
         streetViewControl: false,
@@ -38,29 +38,28 @@ function initialize() {
     });
 
     // Retrieving the information with AJAX
-    $.get('/bears.json', function (bears) {
+    $.get('/businesses.json', function (businesses) {
         // Attach markers to each bear location in returned JSON
-        var bear, marker, contentString;
+        var business, marker, contentString;
 
-        for (var key in bears) {
-            bear = bears[key];
+        for (var key in businesses) {
+            business = businesses[key];
 
             // Define the marker
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(bear.capLat, bear.capLong),
+                position: new google.maps.LatLng(business.busLat, business.busLong),
                 map: map,
-                title: 'Bear ID: ' + bear.bearId,
+                title: 'Business name: ' + business.business_name,
                 icon: '/static/img/white-marker.png'
             });
 
             // Define the content of the infoWindow
             contentString = (
                 '<div class="window-content">' +
-                    '<p><b>Bear gender: </b>' + bear.gender + '</p>' +
-                    '<p><b>Bear birth year: </b>' + bear.birthYear + '</p>' +
-                    '<p><b>Year captured: </b>' + bear.capYear + '</p>' +
-                    '<p><b>Collared: </b>' + bear.collared + '</p>' +
-                    '<p><b>Location: </b>' + marker.position + '</p>' +
+                    '<p><b>Address: </b>' + business.address + '</p>' +
+                    '<p><b>Phone: </b>' + business.phone + '</p>' +
+                    '<p><b>MAKE A HYPERLINK HERE BLAHHHHHH ID IS    ' + business.businessID +
+                    ' MORE INFO </b></a></p>' +
                 '</div>');
 
             // Inside the loop we call bindInfoWindow passing it the marker,

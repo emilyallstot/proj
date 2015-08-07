@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <h2>{{ display_business.business_name }}</h2>
+
+    <div class="business-details">
+
+        <h3>Business details</h3>
+
+        <!-- get Google street view photo for page profile photo -->
+
+        <ul>
+            <li>Address: {{ display_business.address }}</li>
+            <li>Phone: {{ display_business.phone }}</li>
+            <li> BLAHBLAH BLAH {{ display_business.yelp_id }}
+        </ul>
+        
+        <!-- create additional database to store this info: -->
+    
+    {% if display_infos %}
+    <br>
+        <ul>
+            <li>Website: {{ display_infos.website_url }}</li>
+            <li>Yelp: {{ display_infos.yelp_url }}</li>
+            <li>Facebook:  {{ display_infos.facebook_url }}</li>
+            <li>Instagram:  {{ display_infos.instagram_url }}</li>
+            <li>Twitter:  {{ display_infos.twitter_url }}</li>
+            <li>Emily's Review:  {{ display_infos.emily_url }}</li>
+        </ul>
+    {% endif %}
+    </div>
+
+{% endblock %}
+
