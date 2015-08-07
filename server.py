@@ -10,15 +10,8 @@ app.secret_key = "ursusmaritimus"
 
 
 @app.route('/')
-def index():
-    """Show homepage."""
-
-    return render_template("home.html")
-
-
-@app.route('/bears')
 def map():
-    """Show map of bears."""
+    """Show map of businesses."""
 
     return render_template("map.html")
 

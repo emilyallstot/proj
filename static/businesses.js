@@ -50,7 +50,7 @@ function initialize() {
                 position: new google.maps.LatLng(business.busLat, business.busLong),
                 map: map,
                 title: 'Business name: ' + business.business_name,
-                icon: '/static/img/white-marker.png'
+                icon: '/static/img/nails-small.png'
             });
 
             // Define the content of the infoWindow
