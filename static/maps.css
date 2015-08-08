@@ -4,6 +4,7 @@
 
 body {
     background-image: url('img/nails-64x64.png');
+    background-color: #00decb;
     background-repeat: repeat;
     font-family: 'Pacifico', cursive;
 }
@@ -53,7 +54,6 @@ a:active {
 #single-map {
     width: 1024px;
     height: 768px;
-    border: 3px solid #FFFFFF;
 }
 
 
