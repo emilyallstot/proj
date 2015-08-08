@@ -39,15 +39,15 @@ function initialize() {
 
     // Retrieving the information with AJAX
     $.get('/businesses.json', function (businesses) {
-        // Attach markers to each bear location in returned JSON
+        // Attach markers to each business location in returned JSON
         var business, marker, contentString;
 
-        for (var key in businesses) {
-            business = businesses[key];
+        for (var yelp_id in businesses) {
+            business = businesses[yelp_id];
 
             // Define the marker
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(business.busLat, business.busLong),
+                position: new google.maps.LatLng(business.bus_lat, business.bus_long),
                 map: map,
                 title: 'Business name: ' + business.business_name,
                 icon: '/static/img/nails-small.png'
@@ -58,7 +58,7 @@ function initialize() {
                 '<div class="window-content">' +
                     '<p><b>Address: </b>' + business.address + '</p>' +
                     '<p><b>Phone: </b>' + business.phone + '</p>' +
-                    '<p><b>MAKE A HYPERLINK HERE BLAHHHHHH ID IS    ' + business.businessID +
+                    '<p><b>MAKE A HYPERLINK HERE BLAHHHHHH ID IS    ' + business.yelp_id +
                     ' MORE INFO </b></a></p>' +
                 '</div>');
 
