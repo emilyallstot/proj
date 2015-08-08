@@ -11,8 +11,8 @@ function initialize() {
     // Create a map object, and include the MapTypeId to add
     // to the map type control.
     var mapOptions = {
-        zoom: 8,
-        center: new google.maps.LatLng(37, -122),
+        zoom: 13,
+        center: new google.maps.LatLng(37.77018, -122.44259),
         zoomControl: true,
         panControl: false,
         streetViewControl: false,

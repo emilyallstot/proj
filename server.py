@@ -35,27 +35,6 @@ def business_info():
     return jsonify(businesses)
 
 
-@app.route('/simplemap')
-def simple():
-    """Show simple map."""
-
-    return render_template("simple.html")
-
-
-@app.route('/geolocate')
-def geolocate():
-    """Show geolocating demo."""
-
-    return render_template("geolocate.html")
-
-
-@app.route('/savemap')
-def save():
-    """Saving demo."""
-
-    return render_template("saved.html")
-
-
 @app.route("/salonpages/<int:business_id>")
 def show_business(business_id):
     """Return page showing the details of a given business. 
